@@ -1,0 +1,43 @@
+icon: mdi:chart-bell-curve
+# Title of the view. Will be used as the tooltip for tab icon
+title: Sensors
+cards:
+    - type: history-graph
+      title: "Gateway Packets/sec"
+      entities:
+        - sensor.unifi_gateway_3_packets_sec_received
+        - sensor.unifi_gateway_3_packets_sec_sent
+    - type: history-graph
+      title: "Gateway Packets"
+      entities:
+        - sensor.unifi_gateway_3_packets_received
+        - sensor.unifi_gateway_3_packets_sent
+    - type: history-graph
+      title: "Gateway Bytes"
+      entities:
+        - sensor.unifi_gateway_3_bytes_received
+        - sensor.unifi_gateway_3_bytes_sent
+    - type: history-graph
+      title: 'Internal temperature'
+      entities:
+        - entity: sensor.awair_temperature
+          name: Internal temperature
+        - entity: sensor.weather_temperature
+          name: Outside temperature
+    - type: history-graph
+      title: 'Chemicals/VOC'
+      entities:
+        - sensor.awair_voc
+    - type: history-graph
+      title: 'PM2.5/Dust'
+      entities:
+        - sensor.awair_pm2_5
+    - type: history-graph
+      title: 'Humidity'
+      entities:
+        - sensor.awair_humidity
+    - type: history-graph
+      title: 'Awair Score'
+      entities:
+        - sensor.awair_score
+

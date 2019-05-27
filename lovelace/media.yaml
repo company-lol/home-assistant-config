@@ -1,0 +1,6 @@
+icon: mdi:library-music
+# Title of the view. Will be used as the tooltip for tab icon
+title: Media
+cards:
+  - type: media-control
+    entity: media_player.office
