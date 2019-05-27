@@ -5,6 +5,9 @@
     entity_id: input_boolean.occupied
     to: 'off'
   action:
+  - service: notify.text_alerts
+      data:
+        message: Turning office off
   - service: light.turn_off
     entity_id:  light.nanoleaf
   - service: media_player.media_play_pause
@@ -19,6 +22,9 @@
     entity_id: input_boolean.occupied
     to: 'on'
   action:
+  - service: notify.text_alerts
+      data:
+        message: Turning office on
   - service: light.turn_on
     entity_id:  light.nanoleaf
   - service: media_player.media_play

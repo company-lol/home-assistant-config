@@ -8,7 +8,7 @@
   action:
     - service: notify.text_alerts
       data:
-        message: Turning office off
+        message: Everyone has left
     - service: input_boolean.turn_off
       entity_id: input_boolean.occupied
 
@@ -21,9 +21,9 @@
   action:
     - service: notify.audio_alerts
       data:
-        message: Turning office on
+        message: Hello
     - service: notify.text_alerts
       data:
-        message: Turning office on
+        message: People have arrived
     - service: input_boolean.turn_on
       entity_id: input_boolean.occupied
