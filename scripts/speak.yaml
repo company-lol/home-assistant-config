@@ -1,0 +1,7 @@
+speak: 
+  alias: TTS Handler
+  sequence: 
+    - service: tts.google_translate_say
+      entity_id: "group.google_homes"
+      data_template:
+        message: "{{ message }}"
