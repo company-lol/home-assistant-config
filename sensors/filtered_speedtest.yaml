@@ -1,0 +1,30 @@
+ - platform: filter
+   name: "speedtest download filtered"
+   entity_id: sensor.speedtest_download
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+ - platform: filter
+   name: "speedtest upload filtered"
+   entity_id: sensor.speedtest_upload
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+ - platform: filter
+   name: "speedtest ping filtered"
+   entity_id: sensor.speedtest_ping
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2

@@ -1,0 +1,66 @@
+
+ - platform: filter
+   name: "awair co2 filtered"
+   entity_id: sensor.awair_co2
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+
+ - platform: filter
+   name: "awair humidity filtered"
+   entity_id: sensor.awair_humidity
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+
+ - platform: filter
+   name: "awair PM2.5 filtered"
+   entity_id: sensor.awair_pm2_5
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+
+ - platform: filter
+   name: "awair score filtered"
+   entity_id: sensor.awair_score
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+
+ - platform: filter
+   name: "awair temperature filtered"
+   entity_id: sensor.awair_temperature
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
+
+ - platform: filter
+   name: "awair voc filtered"
+   entity_id: sensor.awair_voc
+   filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0
+      - filter: lowpass
+        time_constant: 10
+        precision: 2
