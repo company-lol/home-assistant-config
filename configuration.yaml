@@ -1,0 +1,92 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret office_lat
+  longitude: !secret office_lng
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+  packages: !include_dir_named packages
+  customize: !include_dir_merge_named customize
+  whitelist_external_dirs:
+    - '/tmp/'
+
+
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+#
+
+lovelace:
+  mode: yaml
+
+# Discover some devices automatically
+discovery:
+
+speedtestdotnet:
+
+prometheus:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+mqtt:
+  broker: 192.168.120.34
+  discovery: true
+  discovery_prefix: homeassistant
+
+device_tracker:
+  - platform: unifi
+    host: 192.168.120.8
+    username: homeassistant 
+    password: !secret unifi_password
+    verify_ssl: false 
+    ssid_filter:
+      - 'company.lol'
+      - 'company.lol-guest'
+
+light:
+  - platform: nanoleaf
+    host: 192.168.120.22
+    token: !secret nanoleaf_key 
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_key
+
+notify: !include notifiers.yaml
+
+input_boolean:
+  occupied:
+    name: Office Occupied
+    initial: off
+    icon: mdi:nature-people
+
+august:
+  login_method: email
+  username: !secret august_username
+  password: !secret august_password
+
+twilio:
+  account_sid: !secret twilio_sid
+  auth_token: !secret twilio_token
+
+switch: !include_dir_merge_list switches
+sensor: !include_dir_merge_list sensors
+alert: !include_dir_merge_named alerts
+group: !include_dir_merge_named groups
+binary_sensor: !include_dir_merge_list binary_sensors
+camera: !include cameras.yaml
+scene: !include_dir_merge_list scenes
+script: !include_dir_merge_named scripts
+automation: !include_dir_merge_list automations
