@@ -1,0 +1,8 @@
+- platform: template
+  sensors:
+    average_temperature:
+      friendly_name: "Average Temperature in Office"
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ ((float(states.sensor.sensor.awair_temperature.state) + float(states.sensor.front_temperature.state) + float(states.sensor.back_temperature.state)) / 3) | round(2) }}
+
