@@ -1,0 +1,11 @@
+- alias: 'People leaving'
+  trigger:
+    platform: state
+    entity_id: person.harper_reed, person.ivan_indrautama, person.jordan_ho, person.marlene_ho, person.armani_ragers
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: notify.text_alerts
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} has left

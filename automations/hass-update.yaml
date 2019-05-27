@@ -1,0 +1,10 @@
+- id: hass_update
+  alias: Home assistant updated
+  trigger:
+  - platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.text_alerts
+    data:
+      title: "Upgrade alert!"
+      message: "Home Assistant {{ states.updater.updater.state }} is now available"

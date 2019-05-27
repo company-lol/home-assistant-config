@@ -1,0 +1,29 @@
+
+- alias: 'Office no longer occupied'
+  trigger:
+    platform: state
+    entity_id: group.people
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: notify.text_alerts
+      data:
+        message: Turning office off
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.occupied
+
+- alias: 'Office occupied'
+  trigger:
+    platform: state
+    entity_id: group.people
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: notify.audio_alerts
+      data:
+        message: Turning office on
+    - service: notify.text_alerts
+      data:
+        message: Turning office on
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.occupied

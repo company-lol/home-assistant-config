@@ -1,0 +1,26 @@
+- id: unoccupied
+  alias: Office is not occupied
+  trigger:
+    platform: state
+    entity_id: input_boolean.occupied
+    to: 'off'
+  action:
+  - service: light.turn_off
+    entity_id:  light.nanoleaf
+  - service: media_player.media_play_pause
+    entity_id: media_player.office
+  - service: switch.turn_off
+    entity_id: switch.ac
+
+- id: occupied
+  alias: Office is occupied
+  trigger:
+    platform: state
+    entity_id: input_boolean.occupied
+    to: 'on'
+  action:
+  - service: light.turn_on
+    entity_id:  light.nanoleaf
+  - service: media_player.media_play
+    entity_id: media_player.office
+
