@@ -1,0 +1,11 @@
+awair:
+  name: Air Quality
+  entities:
+  - sensor.awair_temperature_3
+  - sensor.awair_score_5
+  - sensor.awair_co2
+  - sensor.awair_humidity_3
+  - sensor.awair_pm2_5_3
+  - sensor.awair_voc_2
+
+

@@ -1,0 +1,23 @@
+default_view:
+  name: Home
+  view: yes
+  entities:
+  - group.people
+  - group.sonos
+  - group.office
+
+cameras:
+  name: Cameras
+  view: yes
+  entities:
+    - camera.office
+    - camera.door
+    - camera.hallway
+    - camera.street
+
+metrics:
+  name: Sensors
+  view: yes
+  entities:
+  - group.awair
+  - group.unifi

@@ -1,0 +1,12 @@
+all_lights_and_switches:
+  name: Switchables
+  entities:
+  - group.all_lights
+  - group.all_switches
+
+office:
+  name: Office
+  entities:
+  - light.nanoleaf
+  - lock.front_door
+

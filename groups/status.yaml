@@ -1,0 +1,4 @@
+hass:
+  name: Home assistant
+  entities:
+    - sensor.uptime

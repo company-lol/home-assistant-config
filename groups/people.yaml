@@ -1,0 +1,7 @@
+people:
+  name: People 
+  view: no
+  entities:
+    - person.harper_reed
+    - person.hiromi_nakazawa
+    - person.ivan_indrautama

@@ -1,0 +1,9 @@
+sonos:
+  name: Sonos Speakers
+  entities:
+  - media_player.office
+
+google_homes:
+  name: Google homes
+  entities:
+    - media_player.office_speaker
