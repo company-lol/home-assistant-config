@@ -1,0 +1,22 @@
+- platform: mqtt
+  state_topic: "zwave/nodeID_10/sensor_multilevel/luminance"
+  name: "Front Luminance"
+  device_class: illuminance
+
+- platform: mqtt
+  state_topic: "zwave/nodeID_11/sensor_multilevel/luminance"
+  name: "Back Luminance"
+  device_class: illuminance
+
+
+- platform: mqtt
+  state_topic: "zwave/nodeID_10/sensor_multilevel/temperature"
+  name: "Front Temperature"
+  device_class: temperature
+
+- platform: mqtt
+  state_topic: "zwave/nodeID_11/sensor_multilevel/temperature"
+  name: "Back Temperature"
+  device_class: temperature
+
+

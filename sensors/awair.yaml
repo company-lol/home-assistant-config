@@ -1,0 +1,4 @@
+  - platform: awair
+    access_token: !secret awair_key
+    devices:
+      - uuid: awair-r2_8738
