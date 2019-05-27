@@ -1,0 +1,15 @@
+- platform: bayesian
+  name: "motion sensed"
+  prior: 0.5
+  probability_threshold: 0.75
+  observations:
+       - platform: 'state'
+         entity_id: 'binary_sensor.front_motion'
+         prob_given_true: 0.9
+         prob_given_false: 0.1
+         to_state: 'on'
+       - platform: 'state'
+         entity_id: 'binary_sensor.back_motion'
+         prob_given_true: 0.9
+         prob_given_false: 0.1
+         to_state: 'on'
