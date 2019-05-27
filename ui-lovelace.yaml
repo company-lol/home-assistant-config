@@ -1,0 +1,178 @@
+title: company.lol
+views:
+    # View tab title.
+  - title: Home
+    icon: mdi:home
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Dashboard
+        content: >
+          Welcome to the company.lol dashboard
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - type: conditional
+        conditions:
+            - entity: group.people
+              state: "home"
+        card:
+          type: entity-filter
+          entities:
+            - person.ivan_indrautama
+            - person.harper_reed
+          state_filter:
+            - 'home'
+          card:
+            type: glance
+            title: People in the office
+      - type: vertical-stack
+        cards:
+        - type: markdown
+          title: Air Quality
+          content: >
+            Air Quality for the office
+        - type: sensor
+          entity: sensor.awair_score
+          graph: line
+
+        - type: horizontal-stack
+          cards:
+          - type: gauge
+            entity: sensor.awair_co2
+            severity:
+              green: 0
+              yellow: 600
+              red: 1500
+            max:  3000
+          - type: gauge
+            entity: sensor.awair_pm2_5
+            severity:
+              green: 0
+              yellow: 20
+              red: 55
+            max: 100
+          - type: gauge
+            entity: sensor.awair_voc
+            severity:
+              green: 0
+              yellow: 333
+              red: 3333
+            max: 9000
+      - type: vertical-stack
+        cards:
+        - type: markdown
+          title: Control
+          content: >
+            Control the office
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.nanoleaf
+          - type: entity-button
+            entity: lock.front_door
+          - type: entity-button
+            entity: media_player.office
+          - type: entity-button
+            entity: switch.ac
+
+  - icon: mdi:library-music
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Media
+    cards:
+      - type: media-control
+        entity: media_player.office
+  - icon: mdi:camera
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Cameras
+    cards:
+      - type: picture-glance
+        title: Door 
+        entities:
+          - lock.front_door
+        camera_image: camera.door
+      - type: picture-glance
+        title: Office
+        entities:
+          - light.nanoleaf
+        camera_image: camera.office
+      - type: picture-glance
+        title: Hallway
+        entities:
+          - lock.front_door
+        camera_image: camera.hallway
+      - type: picture-glance
+        title: Street
+        entities: []
+        camera_image: camera.street
+        # Entities card will take a list of entities and show their state.
+  - icon: mdi:air-filter
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Sensors
+    cards:
+      - type: markdown
+        title: Air Quality
+        content: >
+          Data from the Awair sensor and weather
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - type: sensor
+        entity: sensor.awair_score
+        graph: line
+      - type: sensor
+        entity: sensor.awair_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.awair_voc
+        graph: line
+      - type: sensor
+        entity: sensor.awair_pm2_5
+        graph: line
+      - type: sensor
+        entity: sensor.awair_co2
+        graph: line
+      - type: sensor
+        entity: sensor.awair_humidity
+        graph: line
+  - icon: mdi:chart-bell-curve
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Sensors
+    cards:
+        - type: history-graph
+          title: "Gateway Packets/sec"
+          entities:
+            - sensor.unifi_gateway_3_packets_sec_received
+            - sensor.unifi_gateway_3_packets_sec_sent
+        - type: history-graph
+          title: "Gateway Packets"
+          entities:
+            - sensor.unifi_gateway_3_packets_received
+            - sensor.unifi_gateway_3_packets_sent
+        - type: history-graph
+          title: "Gateway Bytes"
+          entities:
+            - sensor.unifi_gateway_3_bytes_received
+            - sensor.unifi_gateway_3_bytes_sent
+        - type: history-graph
+          title: 'Internal temperature'
+          entities:
+            - entity: sensor.awair_temperature
+              name: Internal temperature
+            - entity: sensor.weather_temperature
+              name: Outside temperature
+        - type: history-graph
+          title: 'Chemicals/VOC'
+          entities:
+            - sensor.awair_voc
+        - type: history-graph
+          title: 'PM2.5/Dust'
+          entities:
+            - sensor.awair_pm2_5
+        - type: history-graph
+          title: 'Humidity'
+          entities:
+            - sensor.awair_humidity
+        - type: history-graph
+          title: 'Awair Score'
+          entities:
+            - sensor.awair_score
+
