@@ -1,0 +1,59 @@
+awair_score:
+    name: Awair Score is Low
+    message: "The awair score is {{ states('sensor.awair_score') }}.  Open a window!"
+    entity_id: binary_sensor.awair_low
+    repeat: 30
+    notifiers:
+      - audio_alerts
+
+awair_c02:
+    name: CO2 is high
+    done_message: "CO2 is back to normal"
+    message: "CO2 level is High. currently {{ states('sensor.awair_co2') }}"
+    entity_id: binary_sensor.co2_high
+    repeat:
+      - 30
+      - 60
+      - 120
+    notifiers:
+      - audio_alerts
+      - text_alerts
+
+awair_voc:
+    name: VOC value is high
+    done_message: "VOC is back to normal"
+    message: "The VOC value is high. Currently {{ states('sensor.awair_voc') }} pbb. "
+    entity_id: binary_sensor.voc_high
+    repeat:
+      - 30
+      - 60
+      - 120
+    notifiers:
+      - audio_alerts
+      - text_alerts
+
+awair_pm25:
+    name: Dust value is high
+    done_message: "Dust has dissipated"
+    message: "The Dust value is high. Currently {{ states('sensor.awair_pm2_5') }} µg/m3. "
+    entity_id: binary_sensor.pm25_high
+    repeat:
+      - 30
+      - 60
+      - 120
+    notifiers:
+      - audio_alerts
+      - text_alerts
+
+awair_temp_high:
+    name: Temperature is too high
+    done_message: "Temperature is back to normal"
+    message: "It is hot! The temperature is currently {{ states('sensor.awair_temperature') }} °F. "
+    entity_id: binary_sensor.temp_high
+    repeat:
+      - 30
+      - 60
+      - 120
+    notifiers:
+      - audio_alerts
+

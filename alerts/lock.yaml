@@ -1,0 +1,13 @@
+locked:
+    name: Door state
+    done_message: Door is locked
+    message: Door is unlocked
+    entity_id: lock.front_door
+    state: 'unlocked'
+    repeat:
+      - 30
+      - 60
+      - 120
+    notifiers:
+      - audio_alerts
+      - sms_alerts
