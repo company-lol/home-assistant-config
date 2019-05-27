@@ -1,0 +1,10 @@
+
+ - platform: mqtt
+   command_topic: "zwave/nodeID_12/switch_binary/switch/set"
+   state_topic: "zwave/nodeID_12/switch_binary/switch"
+   state_on: "true"
+   state_off: "false"
+   payload_on: "true"
+   payload_off: "false"
+   icon: mdi:air-conditioner
+   name: AC
