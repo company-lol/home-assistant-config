@@ -1,0 +1,42 @@
+- platform: template
+  sensors:
+     temp_high:
+        value_template: >- 
+          {{ states('sensor.awair_temperature_3')|float > 70 }}
+        friendly_name: 'temperature is above 80'
+        icon_template: mdi:cloud-outline
+     temp_low:
+        value_template: >- 
+          {{ states('sensor.awair_temperature_3')|float < 61 }}
+        friendly_name: 'temperatuire is below 60'
+        icon_template: mdi:cloud-outline
+     humidity_high:
+        value_template: >- 
+          {{ states('sensor.awair_humidity_3')|float > 50 }}
+        friendly_name: 'humifity is above 50%'
+        icon_template: mdi:cloud-outline
+     humidity_low:
+        value_template: >- 
+          {{ states('sensor.awair_humidity_3')|float < 40 }}
+        friendly_name: 'humidity is below 40%'
+        icon_template: mdi:cloud-outline
+     co2_high:
+        value_template: >- 
+          {{ states('sensor.awair_co2')|float > 1000 }}
+        friendly_name: 'co2 is high'
+        icon_template: mdi:cloud-outline
+     voc_high:
+        value_template: >- 
+          {{ states('sensor.awair_voc_2')|float > 500 }}
+        friendly_name: 'VOC is high'
+        icon_template: mdi:cloud-outline
+     pm25_high:
+        value_template: >- 
+          {{ states('sensor.awair_pm2_5_3')|float > 35 }}
+        friendly_name: 'Dust is high'
+        icon_template: mdi:cloud-outline
+     awair_low:
+        value_template: >- 
+          {{ states('sensor.awair_score_5')|float < 90 }}
+        friendly_name: 'Awair score is low'
+        icon_template: mdi:cloud-outline

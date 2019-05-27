@@ -1,0 +1,14 @@
+
+- platform: mqtt
+  payload_on: "true"
+  payload_off: "false"
+  state_topic: "zwave/nodeID_10/sensor_binary/sensor"
+  device_class: motion
+  name: "Front Motion"
+
+- platform: mqtt
+  payload_on: "true"
+  payload_off: "false"
+  state_topic: "zwave/nodeID_11/sensor_binary/sensor"
+  device_class: motion
+  name: "Back Motion"
