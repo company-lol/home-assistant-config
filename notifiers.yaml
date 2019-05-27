@@ -1,0 +1,40 @@
+- name: Audio Alerts
+  platform: group
+  services: 
+    - service: google_say
+
+- name: Text Alerts 
+  platform: group
+  services:
+    - service: twilio
+      data:
+        target:
+          - !secret ivan_mobile
+          - !secret harper_mobile
+    - service: pushbullet
+      data: 
+        target:
+          - !secret pushbullet_channel
+
+
+
+- name: Pushbullet Channel
+  platform: group
+  services:
+    - service: pushbullet
+      data: 
+        target:
+          - !secret pushbullet_channel
+
+- name: google_say
+  platform: rest
+  resource: http://192.168.120.34:5000/say/
+  message_param_name: text
+
+- name: twilio
+  platform: twilio_sms
+  from_number: !secret twilio_number
+- name: pushbullet
+  platform: pushbullet
+  api_key: !secret pushbullet_key
+
