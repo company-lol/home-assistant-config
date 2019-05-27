@@ -1,5 +1,5 @@
 title: Internet
-icon: mdi:home
+icon: mdi:help-network
 cards:
     # The markdown card will render markdown text.
   - type: markdown

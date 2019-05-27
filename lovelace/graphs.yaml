@@ -1,6 +1,6 @@
 icon: mdi:chart-bell-curve
 # Title of the view. Will be used as the tooltip for tab icon
-title: Sensors
+title: Graphs
 cards:
     - type: history-graph
       title: "Gateway Packets/sec"
