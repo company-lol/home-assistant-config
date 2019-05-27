@@ -1,11 +1,13 @@
 - platform: mqtt
   state_topic: "zwave/nodeID_10/sensor_multilevel/luminance"
   name: "Front Luminance"
+  unit_of_measurement: "lx"
   device_class: illuminance
 
 - platform: mqtt
   state_topic: "zwave/nodeID_11/sensor_multilevel/luminance"
   name: "Back Luminance"
+  unit_of_measurement: "lx"
   device_class: illuminance
 
 
@@ -13,10 +15,12 @@
   state_topic: "zwave/nodeID_10/sensor_multilevel/temperature"
   name: "Front Temperature"
   device_class: temperature
+  unit_of_measurement: "°C"
 
 - platform: mqtt
   state_topic: "zwave/nodeID_11/sensor_multilevel/temperature"
   name: "Back Temperature"
   device_class: temperature
+  unit_of_measurement: "°C"
 
 
