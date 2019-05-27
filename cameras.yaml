@@ -1,0 +1,20 @@
+  - platform: generic
+    name: Office
+    still_image_url: http://192.168.120.11/snap.jpeg
+    verify_ssl: false
+    stream_source: rtsp://192.168.120.8:7447/XCJ41cqCyUb5EIK6
+  - platform: generic
+    name: Door
+    still_image_url: http://192.168.120.10/snap.jpeg
+    verify_ssl: false
+    stream_source: rtsp://192.168.120.8:7447/LRZoM38kFQ5v45Dz
+  - platform: generic
+    name: Hallway
+    still_image_url: http://192.168.120.35/snap.jpeg
+    verify_ssl: false
+    stream_source: rtsp://192.168.120.8:7447/X62hKamqq6OynuBv
+  - platform: generic
+    name: Street
+    still_image_url: http://192.168.120.36/snap.jpeg
+    verify_ssl: false
+    stream_source: rtsp://192.168.120.8:7447/c10fakJeEUrLo9OH
