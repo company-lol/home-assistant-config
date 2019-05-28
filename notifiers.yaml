@@ -26,6 +26,18 @@
         target:
           - !secret pushbullet_channel
 
+- name: doorbell
+  platform: rest
+  resource: http://192.168.120.34:5000/play/doorbell.mp3
+
+- name: laugh
+  platform: rest
+  resource: http://192.168.120.34:5000/play/evil_laugh.mp3
+
+- name: door_chime
+  platform: rest
+  resource: http://192.168.120.34:5000/play/store_door.mp4
+
 - name: google_say
   platform: rest
   resource: http://192.168.120.34:5000/say/
