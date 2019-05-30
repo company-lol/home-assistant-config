@@ -1,0 +1,19 @@
+- id: unoccupied-laugh
+  alias: Unoccupied Laugh
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensed
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.occupied
+    state: 'off'
+  action:
+  - service: notify.text_alerts
+    data:
+        message: Motion in office when office is unoccupied
+  - delay: 3
+  - service: notify.laugh
+    data:
+        message: Laugh it up
+
