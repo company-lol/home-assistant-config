@@ -1,0 +1,11 @@
+- id: door-chime
+  alias: doorchime
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_door
+    to: 'on'
+  action:
+  - service: notify.door_chime
+    data:
+        message: Door Chime
+
