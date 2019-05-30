@@ -20,18 +20,20 @@ cards:
       state_filter:
         - 'home'
       card:
+        title: "People here"
         type: glance
-        title: People in the office
+  - type: glance
+    entities: 
+      - binary_sensor.front_door
+      - binary_sensor.front_motion
+      - binary_sensor.back_motion
+      - binary_sensor.motion_sensed
   - type: vertical-stack
     cards:
     - type: markdown
       title: Air Quality
       content: >
         Air Quality for the office
-    - type: sensor
-      entity: sensor.awair_score
-      graph: line
-
     - type: horizontal-stack
       cards:
       - type: gauge
@@ -55,6 +57,11 @@ cards:
           yellow: 333
           red: 3333
         max: 9000
+    - type: glance
+      entities:
+        - sensor.awair_score
+        - sensor.average_temperature
+        - sensor.awair_humidity
   - type: vertical-stack
     cards:
     - type: markdown

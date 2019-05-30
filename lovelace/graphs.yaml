@@ -3,6 +3,12 @@ icon: mdi:chart-bell-curve
 title: Graphs
 cards:
     - type: history-graph
+      title: "Lumination"
+      entities:
+        - sensor.average_luminance
+        - sensor.back_luminance
+        - sensor.front_luminance
+    - type: history-graph
       title: "Gateway Packets/sec"
       entities:
         - sensor.unifi_gateway_3_packets_sec_received
@@ -29,9 +35,13 @@ cards:
       entities:
         - sensor.awair_voc_filtered
     - type: history-graph
+      title: 'CO2'
+      entities:
+        - sensor.awair_co2_filtered
+    - type: history-graph
       title: 'PM2.5/Dust'
       entities:
-        - sensor.awair_pm2_5_filtereed
+        - sensor.awair_pm2_5_filtered
     - type: history-graph
       title: 'Humidity'
       entities:
@@ -40,4 +50,9 @@ cards:
       title: 'Awair Score'
       entities:
         - sensor.awair_score_filtered
+    - type: history-graph
+      title: 'Rain'
+      entities:
+        - sensor.weather_precipitation
+
 
