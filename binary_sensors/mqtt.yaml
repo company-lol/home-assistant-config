@@ -12,3 +12,10 @@
   state_topic: "zwave/nodeID_11/sensor_binary/sensor"
   device_class: motion
   name: "Back Motion"
+
+- platform: mqtt
+  payload_on: "22"
+  payload_off: "23"
+  state_topic: "zwave/nodeID_6/alarm/access_control"
+  device_class: door
+  name: "Front Door"

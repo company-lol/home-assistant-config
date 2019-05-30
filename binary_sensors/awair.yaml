@@ -2,18 +2,18 @@
   sensors:
      temp_high:
         value_template: >- 
-          {{ states('sensor.awair_temperature')|float > 70 }}
+          {{ states('sensor.awair_temperature')|float > 80 }}
         friendly_name: 'temperature is above 80'
         icon_template: mdi:cloud-outline
      temp_low:
         value_template: >- 
           {{ states('sensor.awair_temperature')|float < 61 }}
-        friendly_name: 'temperatuire is below 60'
+        friendly_name: 'temperature is below 60'
         icon_template: mdi:cloud-outline
      humidity_high:
         value_template: >- 
           {{ states('sensor.awair_humidity')|float > 50 }}
-        friendly_name: 'humifity is above 50%'
+        friendly_name: 'humidity is above 50%'
         icon_template: mdi:cloud-outline
      humidity_low:
         value_template: >- 
@@ -37,6 +37,6 @@
         icon_template: mdi:cloud-outline
      awair_low:
         value_template: >- 
-          {{ states('sensor.awair_score')|float < 90 }}
+          {{ states('sensor.awair_score')|float < 70 }}
         friendly_name: 'Awair score is low'
         icon_template: mdi:cloud-outline

@@ -16,6 +16,7 @@ homeassistant:
   whitelist_external_dirs:
     - '/tmp/'
   auth_providers:
+    - type: homeassistant
     - type: trusted_networks
       trusted_networks:
         - 192.168.120.0/24
