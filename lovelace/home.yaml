@@ -78,3 +78,7 @@ cards:
         entity: media_player.office
       - type: entity-button
         entity: switch.ac
+    - type: horizontal-stack
+      cards:
+      - type: entity-button
+        entity: switch.doorbell_mqtt
