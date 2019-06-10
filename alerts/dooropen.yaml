@@ -1,0 +1,12 @@
+locked:
+    name: Door open state
+    done_message: Door is opened
+    message: Door is closed
+    entity_id: binary_sensor.front_door
+    state: 'on'
+    skip_first: true
+    repeat:
+      - 30
+    notifiers:
+      - audio_alerts
+      - text_alerts
