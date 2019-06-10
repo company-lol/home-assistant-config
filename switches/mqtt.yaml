@@ -8,3 +8,15 @@
    payload_off: "false"
    icon: mdi:air-conditioner
    name: AC
+
+
+ - platform: mqtt
+   state_on: "0"
+   state_off: "1"
+   payload_on: "0"
+   payload_off: "1"
+
+   command_topic: "zwave/nodeID_21/alarm/alarm_type"
+   state_topic: "zwave/nodeID_21/alarm/alarm_type"
+   name: "Doorbell Mqtt"
+
