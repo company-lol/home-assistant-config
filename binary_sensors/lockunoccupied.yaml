@@ -1,0 +1,15 @@
+- platform: template
+  sensors:
+     unlocked_unoccupied:
+        value_template: >- 
+          {% if  states('lock.front_door')=="unlocked" %}
+          {% if  states('input_boolean.occupied')=="off" %}
+          true
+          {% else %}
+          false
+          {% endif %}
+          {% else %}
+          false
+          {% endif %}
+        friendly_name: 'Door is unlocked when office is unoccupied'
+        icon_template: mdi:lock
