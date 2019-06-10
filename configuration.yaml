@@ -1,6 +1,6 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: Home
+  name: Company.lol Office
   # Location required to calculate the time the sun rises and sets
   latitude: !secret office_lat
   longitude: !secret office_lng
