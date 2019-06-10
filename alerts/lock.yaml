@@ -1,13 +1,11 @@
 locked:
     name: Door state
-    done_message: Door is locked
-    message: Door is unlocked
-    entity_id: lock.front_door
-    state: 'unlocked'
+    message: Door is unlocked and no one is at the office
+    entity_id: binary_sensor.unlocked_unoccupied
+    state: 'on'
+    skip_first: true
     repeat:
-      - 30
-      - 60
-      - 120
+      - 5
     notifiers:
       - audio_alerts
-      - sms_alerts
+      - text_alerts
