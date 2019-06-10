@@ -1,0 +1,15 @@
+- id: doorbell-notification
+  alias: Doorbell Notification
+  trigger:
+    platform: state
+    entity_id: binary_sensor.doorbell_ringing
+    to: 'on'
+  action:
+  - service: notify.text_alerts
+    data:
+        message: Doorbell
+  - delay: 3
+  - service: notify.doorbell
+    data:
+        message: Doorbell
+

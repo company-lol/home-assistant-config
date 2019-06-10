@@ -1,0 +1,18 @@
+- alias: Doorbell
+  trigger:
+    - platform: state
+      entity_id: switch.doorbell_mqtt
+      to: 'on'
+      from: 'off'
+  action:
+    - service: notify.doorbell
+      data:
+        message: Door bell
+    
+    - delay: "00:00:10"
+    - service: mqtt.publish
+      data:
+        topic: "zwave/nodeID_21/alarm/alarm_type"
+        payload: "1"
+
+

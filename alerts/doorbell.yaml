@@ -1,0 +1,10 @@
+doorbell:
+    name: doorbell
+    message: Doorbell has been rung
+    entity_id: switch.doorbell
+    state: 'on'
+    repeat:
+      - 1
+    notifiers:
+      - doorbell
+      - text_alerts
