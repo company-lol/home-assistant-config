@@ -1,0 +1,3 @@
+ - platform: shodan
+   api_key: !secret shodan_api_key
+   query: !secret office_ip

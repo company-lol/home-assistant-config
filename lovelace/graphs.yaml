@@ -8,6 +8,7 @@ cards:
         - sensor.average_luminance
         - sensor.back_luminance
         - sensor.front_luminance
+        - sensor.dsw_illuminance
     - type: history-graph
       title: "Gateway Packets/sec"
       entities:

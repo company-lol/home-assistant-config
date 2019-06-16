@@ -82,3 +82,5 @@ cards:
       cards:
       - type: entity-button
         entity: switch.doorbell_mqtt
+      - type: entity-button
+        entity: input_boolean.occupied
