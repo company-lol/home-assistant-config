@@ -1,0 +1,10 @@
+- platform: dlib_face_detect
+  source:
+  - entity_id: camera.door
+    
+- platform: dlib_face_detect
+  source:
+  - entity_id: camera.office
+- platform: dlib_face_detect
+  source:
+  - entity_id: camera.hallway

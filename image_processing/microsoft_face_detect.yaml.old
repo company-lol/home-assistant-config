@@ -1,0 +1,10 @@
+- platform: microsoft_face_detect
+  source:
+  - entity_id: camera.door
+
+- platform: microsoft_face_detect
+  source:
+  - entity_id: camera.office
+- platform: microsoft_face_detect
+  source:
+  - entity_id: camera.hallway
