@@ -6,15 +6,8 @@
 - name: Text Alerts 
   platform: group
   services:
-    - service: twilio
-      data:
-        target:
-          - !secret ivan_mobile
-          - !secret harper_mobile
-    - service: pushbullet
-      data: 
-        target:
-          - !secret pushbullet_channel
+    - service: slack
+    - service: mqtt_notify
 
 
 
@@ -25,6 +18,19 @@
       data: 
         target:
           - !secret pushbullet_channel
+
+
+- platform: rest
+  name: mqtt_notify
+  resource: 'http://192.168.120.34:8123/api/services/mqtt/publish'
+  method: POST_JSON
+  message_param_name: payload
+  data:
+    topic: flipdot/message
+    retain: false
+  headers:
+      content-type: 'application/json'
+      Authorization: !secret ha_bearer
 
 - name: doorbell
   platform: rest
@@ -50,3 +56,8 @@
   platform: pushbullet
   api_key: !secret pushbullet_key
 
+- name: slack
+  platform: slack
+  username: officebot
+  api_key: !secret slack_key
+  default_channel: '#office'

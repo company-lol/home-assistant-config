@@ -61,6 +61,7 @@ cards:
       entities:
         - sensor.awair_score
         - sensor.average_temperature
+        - sensor.temperature_difference
         - sensor.awair_humidity
   - type: vertical-stack
     cards:
@@ -75,12 +76,14 @@ cards:
       - type: entity-button
         entity: lock.front_door
       - type: entity-button
-        entity: media_player.office
-      - type: entity-button
         entity: switch.ac
-    - type: horizontal-stack
-      cards:
-      - type: entity-button
-        entity: switch.doorbell_mqtt
-      - type: entity-button
-        entity: input_boolean.occupied
+    - type: glance
+      entities:
+        - switch.doorbell_mqtt
+        - input_boolean.occupied
+        - media_player.office
+    - type: glance
+      entities:
+        - switch.rack_fans
+        - switch.switch_one
+        - switch.switch_two

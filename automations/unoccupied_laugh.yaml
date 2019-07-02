@@ -9,10 +9,25 @@
     entity_id: input_boolean.occupied
     state: 'off'
   action:
+  - service: camera.snapshot
+    data:
+        entity_id: camera.office
+        filename: "/config/www/snapshots/office_motion_unoccopied.jpg"
+
   - service: notify.text_alerts
     data:
         message: Motion in office when office is unoccupied
-  - delay: 3
+  - delay: 2
+  - service: notify.slack
+    data:
+        title: "Office Camera"
+        message: ""
+        data:
+          file:
+            path: "/config/www/snapshots/office_motion_unoccopied.jpg"
+
+  - delay: 1
+  
   - service: notify.laugh
     data:
         message: Laugh it up

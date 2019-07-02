@@ -5,9 +5,24 @@
       to: 'on'
       from: 'off'
   action:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.hallway
+        filename: "/config/www/snapshots/hallway_lastdoorbell.jpg"
+    - service: notify.text_alerts
+      data:
+        message: Someone rang the doorbell
     - service: notify.doorbell
       data:
         message: Door bell
+    - delay: "00:00:02" 
+    - service: notify.slack
+      data:
+        title: "Hallway camera snapshot"
+        message: ""
+        data:
+          file:
+            path: "/config/www/snapshots/hallway_lastdoorbell.jpg"
     
     - delay: "00:00:10"
     - service: mqtt.publish

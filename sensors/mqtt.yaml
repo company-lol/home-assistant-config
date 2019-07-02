@@ -24,3 +24,10 @@
   unit_of_measurement: "°C"
 
 
+- platform: mqtt
+  state_topic: "zwave/nodeID_23/meter/power"
+  name: "AC power"
+  device_class: power
+  unit_of_measurement: "W"
+
+

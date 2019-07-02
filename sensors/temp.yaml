@@ -5,4 +5,10 @@
       unit_of_measurement: "°F"
       value_template: >-
         {{( ((float(states("sensor.awair_temperature")) + float(states("sensor.front_temperature")) + float(states("sensor.back_temperature"))) ) /3)|round(2)}}
+    temperature_difference:
+      friendly_name: "Temperature difference "
+      unit_of_measurement: "°F"
+      value_template: >-
+        '{{ ( (states.sensor.average_temperature.state | float - 0.5 ) - ( states.weather.dark_sky.attributes.temperature | float ) ) | round(2) }}'
+
 

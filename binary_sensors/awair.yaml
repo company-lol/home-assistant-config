@@ -27,7 +27,7 @@
         icon_template: mdi:cloud-outline
      voc_high:
         value_template: >- 
-          {{ states('sensor.awair_voc')|float > 700 }}
+          {{ states('sensor.awair_voc')|float > 1000 }}
         friendly_name: 'VOC is high'
         icon_template: mdi:cloud-outline
      pm25_high:
