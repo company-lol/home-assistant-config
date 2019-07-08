@@ -77,13 +77,19 @@ cards:
         entity: lock.front_door
       - type: entity-button
         entity: switch.ac
-    - type: glance
-      entities:
-        - switch.doorbell_mqtt
-        - input_boolean.occupied
-        - media_player.office
-    - type: glance
-      entities:
-        - switch.rack_fans
-        - switch.switch_one
-        - switch.switch_two
+    - type: horizontal-stack
+      cards:
+      - type: entity-button
+        entity: switch.doorbell_mqtt
+      - type: entity-button
+        entity: input_boolean.occupied
+      - type: entity-button
+        entity: media_player.office
+    - type: horizontal-stack
+      cards:
+      - entity: switch.rack_fans
+        type: entity-button
+      - entity: switch.switch_one
+        type: entity-button
+      - entity: switch.switch_two
+        type: entity-button
