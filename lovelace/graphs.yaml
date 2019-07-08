@@ -10,6 +10,11 @@ cards:
         - sensor.front_luminance
         - sensor.dsw_illuminance
     - type: history-graph
+      title: "AC Power"
+      entities:
+        - sensor.ac_power
+
+    - type: history-graph
       title: "Gateway Packets/sec"
       entities:
         - sensor.unifi_gateway_3_packets_sec_received
