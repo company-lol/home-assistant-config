@@ -1,9 +1,0 @@
-title: company.lol
-views:
-  - !include /config/lovelace/home.yaml
-  - !include /config/lovelace/cameras.yaml
-  - !include /config/lovelace/media.yaml
-  - !include /config/lovelace/info.yaml
-  - !include /config/lovelace/airquality.yaml
-  - !include /config/lovelace/internet.yaml
-  - !include /config/lovelace/graphs.yaml
