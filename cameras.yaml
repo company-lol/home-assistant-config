@@ -18,3 +18,12 @@
     still_image_url: http://192.168.120.36/snap.jpeg
     verify_ssl: false
     stream_source: rtsp://192.168.120.8:7447/c10fakJeEUrLo9OH
+  - name: Frigate front office Last Person
+    platform: mqtt
+    topic: frigate/front_office/snapshot
+  - name: Frigate back office Last Person
+    platform: mqtt
+    topic: frigate/back_office/snapshot
+  - name: Frigate door Last Person
+    platform: mqtt
+    topic: frigate/door/snapshot

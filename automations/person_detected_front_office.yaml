@@ -1,0 +1,27 @@
+- id: person-detector-front-office
+  alias: Person Detector Front Office
+  trigger:
+    platform: state
+    entity_id: binary_sensor.frigate_front_office_person
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.occupied
+      state: 'off'
+  action:
+  - service: camera.snapshot
+    data:
+        entity_id: camera.frigate_front_office_last_person
+        filename: "/config/www/snapshots/person_detected_front_office.jpg"
+
+  - service: notify.text_alerts
+    data:
+        message: Person detected in the office
+  - delay: 2
+  - service: notify.slack
+    data:
+        title: "Office Camera: person detected (front)"
+        message: ""
+        data:
+          file:
+            path: "/config/www/snapshots/person_detected_front_office.jpg"
