@@ -6,7 +6,7 @@
    state_off: "false"
    payload_on: "true"
    payload_off: "false"
-   icon: mdi:air-conditioner
+   icon: mdi:fan
    name: Rack Fans
 
  - platform: mqtt
@@ -27,7 +27,7 @@
    payload_on: "true"
    payload_off: "false"
    icon: mdi:toggle-switch-off-outline
-   name: Switch One
+   name: South Desk Lamp
 
  - platform: mqtt
    command_topic: "zwave/nodeID_28/switch_binary/switch/set"
@@ -37,8 +37,17 @@
    payload_on: "true"
    payload_off: "false"
    icon: mdi:toggle-switch-off-outline
-   name: Switch Two
+   name: North Desk Lamp
 
+ - platform: mqtt
+   command_topic: "zwave/nodeID_32/switch_binary/switch/set"
+   state_topic: "zwave/nodeID_32/switch_binary/switch"
+   state_on: "true"
+   state_off: "false"
+   payload_on: "true"
+   payload_off: "false"
+   icon: mdi:toggle-switch-off-outline
+   name: Middle Desk Lamp
  - platform: mqtt
    state_on: "0"
    state_off: "1"

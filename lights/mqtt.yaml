@@ -1,0 +1,14 @@
+- platform: mqtt
+  command_topic: "zwave/nodeID_29/switch_multilevel/level/set"
+  payload_on: "99"
+  payload_off: "0"
+  state_topic: "zwave/nodeID_29/switch_multilevel/level"
+  name: "Floor lamp"
+  brightness_state_topic: "zwave/nodeID_29/switch_multilevel/level"
+  brightness_command_topic: "zwave/nodeID_29/switch_multilevel/level/set"
+  brightness_scale: 99
+  color_temp_state_topic: "zwave/nodeID_29/color/color"
+  on_command_type: 'brightness'
+
+
+

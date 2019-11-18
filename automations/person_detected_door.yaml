@@ -1,0 +1,23 @@
+- id: person-detector-door
+  alias: Person Detector Door
+  trigger:
+    platform: state
+    entity_id: binary_sensor.frigate_door_person
+    to: 'on'
+  action:
+  - service: camera.snapshot
+    data:
+        entity_id: camera.frigate_door_last_person
+        filename: "/config/www/snapshots/person_detected_door.jpg"
+
+  - service: notify.text_alerts
+    data:
+        message: Person detected at the front door
+  - delay: 2
+  - service: notify.slack
+    data:
+        title: "Office Camera: person detected (door)"
+        message: ""
+        data:
+          file:
+            path: "/config/www/snapshots/person_detected_door.jpg"

@@ -31,15 +31,13 @@ default_config:
 #   base_url: example.duckdns.org:8123
 #
 
-lovelace:
-  mode: yaml
 
 # Discover some devices automatically
 discovery:
 
 speedtestdotnet:
 
-prometheus:
+#prometheus:
 
 # Text to speech
 tts:
@@ -50,20 +48,15 @@ mqtt:
   discovery: true
   discovery_prefix: homeassistant
 
-device_tracker:
-  - platform: unifi
-    host: 192.168.120.8
-    username: homeassistant 
-    password: !secret unifi_password
-    verify_ssl: false 
-    ssid_filter:
-      - 'company.lol'
-      - 'company.lol-guest'
+unifi:
+    controllers:
+      - host: 192.168.120.8
+        site: Company.lol
+        dont_track_wired_clients: true
+        ssid_filter:
+        - 'company.lol'
+        - 'company.lol-guest'
 
-light:
-  - platform: nanoleaf
-    host: 192.168.120.22
-    token: !secret nanoleaf_key 
 
 weather:
   - platform: darksky
@@ -91,6 +84,7 @@ twilio:
   #  azure_region: eastus
 
 
+light: !include_dir_merge_list lights
 switch: !include_dir_merge_list switches
 sensor: !include_dir_merge_list sensors
 image_processing: !include_dir_merge_list image_processing
