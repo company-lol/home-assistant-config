@@ -1,0 +1,15 @@
+- name: Frigate Front Office Person
+  platform: mqtt
+  state_topic: "frigate/front_office/person"
+  device_class: motion
+  availability_topic: "frigate/available"
+- name: Frigate Back Office Person
+  platform: mqtt
+  state_topic: "frigate/back_office/person"
+  device_class: motion
+  availability_topic: "frigate/available"
+- name: Frigate Door Person
+  platform: mqtt
+  state_topic: "frigate/door/person"
+  device_class: motion
+  availability_topic: "frigate/available"

@@ -44,6 +44,14 @@
   platform: rest
   resource: http://192.168.120.34:5000/play/store_door.mp4
 
+- name: ascend
+  platform: rest
+  resource: http://192.168.120.34:5000/play/ascend.mp3
+
+- name: chime_spooky
+  platform: rest
+  resource: http://192.168.120.34:5000/play/chime_spooky.mp3
+
 - name: google_say
   platform: rest
   resource: http://192.168.120.34:5000/say/

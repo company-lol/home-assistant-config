@@ -10,5 +10,15 @@
       unit_of_measurement: "°F"
       value_template: >-
         '{{ ( (states.sensor.average_temperature.state | float - 0.5 ) - ( states.weather.dark_sky.attributes.temperature | float ) ) | round(2) }}'
+    front_temperature:
+      friendly_name: "Front Temperature"
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ ((float(states('sensor.front_front_motion_temperature')) * 9 / 5 )  +  32) | round(1) }}
+    back_temperature:
+      friendly_name: "Back Temperature"
+      unit_of_measurement: "°F"
+      value_template: >-
+        {{ ((float(states('sensor.back_back_motion_temperature')) * 9 / 5 )  +  32) | round(1) }}
 
 

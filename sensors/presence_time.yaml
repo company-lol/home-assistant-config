@@ -1,0 +1,24 @@
+
+- platform: history_stats
+  name: Ivan presence
+  entity_id: person.ivan_indrautama
+  state: 'home'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'
+
+- platform: history_stats
+  name: Harper presence
+  entity_id: person.harper_reed
+  state: 'home'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'
+
+- platform: history_stats
+  name: Lamp ON today
+  entity_id: light.nanoleaf
+  state: 'on'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'

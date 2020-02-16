@@ -1,0 +1,11 @@
+- id: '1560727306115'
+  alias: Face
+  trigger:
+  - entity_id: image_processing.microsoftface_hallway
+    from: '0'
+    platform: state
+  condition: []
+  action:
+  - data:
+      message: Face detected in hallway
+    service: notify.text_alerts

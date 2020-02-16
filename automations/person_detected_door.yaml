@@ -7,9 +7,11 @@
   action:
   - service: camera.snapshot
     data:
-        entity_id: camera.frigate_door_last_person
+        entity_id: camera.hallway
         filename: "/config/www/snapshots/person_detected_door.jpg"
-
+  - service: notify.chime_spooky
+    data:
+        message: Door Chime
   - service: notify.text_alerts
     data:
         message: Person detected at the front door

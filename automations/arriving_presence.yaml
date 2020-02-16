@@ -1,7 +1,7 @@
 - alias: 'People Arrive'
   trigger:
     platform: state
-    entity_id: person.harper_reed, person.ivan_indrautama, person.jordan_ho, person.marlene_ho, person.armani_rogers, person.victoria_houed, person.victoria_houed, person.john_bracken, person.hiromi_nakazawa, person.ashley_bryant, person.gauri_sharma
+    entity_id: person.harper_reed, person.ivan_indrautama, person.jordan_ho, person.marlene_ho, person.armani_rogers, person.victoria_houed, person.victoria_houed, person.john_bracken, person.hiromi_nakazawa, person.ashley_bryant, person.gauri_sharma, person.jon_ruth, person.malisa_middlebrooks, person.eryan_cobham
     from: 'not_home'
     to: 'home'
   action:

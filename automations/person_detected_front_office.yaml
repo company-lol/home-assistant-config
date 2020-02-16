@@ -11,13 +11,12 @@
   action:
   - service: camera.snapshot
     data:
-        entity_id: camera.frigate_front_office_last_person
+        entity_id: camera.office
         filename: "/config/www/snapshots/person_detected_front_office.jpg"
-
   - service: notify.text_alerts
     data:
         message: Person detected in the office
-  - delay: 2
+  - delay: 5 
   - service: notify.slack
     data:
         title: "Office Camera: person detected (front)"

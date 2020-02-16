@@ -4,12 +4,12 @@
   probability_threshold: 0.75
   observations:
        - platform: 'state'
-         entity_id: 'binary_sensor.front_motion'
+         entity_id: 'binary_sensor.front_front_motion_contact'
          prob_given_true: 0.9
          prob_given_false: 0.1
          to_state: 'on'
        - platform: 'state'
-         entity_id: 'binary_sensor.back_motion'
+         entity_id: 'binary_sensor.back_back_motion_contact'
          prob_given_true: 0.9
          prob_given_false: 0.1
          to_state: 'on'

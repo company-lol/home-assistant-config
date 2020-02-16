@@ -1,7 +1,7 @@
 - alias: 'People leaving'
   trigger:
     platform: state
-    entity_id: person.harper_reed, person.ivan_indrautama, person.jordan_ho, person.marlene_ho, person.armani_ragers
+    entity_id: person.harper_reed, person.ivan_indrautama, person.jordan_ho, person.marlene_ho, person.armani_ragers, person.eryan_cobham, person.malisa_middlebrooks
     from: 'home'
     to: 'not_home'
   action:

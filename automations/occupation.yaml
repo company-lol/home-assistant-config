@@ -10,6 +10,8 @@
         message: Turning office off
   - service: light.turn_off
     entity_id:  light.nanoleaf
+  - service: light.turn_off
+    entity_id: light.front_globe_lamp_rgb_dimmer
   - service: media_player.media_play_pause
     entity_id: media_player.office
   - service: switch.turn_off
@@ -27,6 +29,8 @@
         message: Turning office on
   - service: light.turn_on
     entity_id:  light.nanoleaf
+  - service: light.turn_on
+    entity_id:  light.front_globe_lamp_rgb_dimmer
   - service: media_player.media_play
     entity_id: media_player.office
 
